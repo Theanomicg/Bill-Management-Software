@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@600;700&display=swap");
+
+:root {
+    --bg: #f2efe8;
+    --surface: #fffdf9;
+    --ink: #1f2937;
+    --muted: #667085;
+    --line: #dfd8ca;
+    --primary: #0d5c63;
+    --accent: #d97706;
+    --success: #166534;
+    --danger: #b91c1c;
+    --shadow: 0 12px 36px rgba(33, 28, 21, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    color: var(--ink);
+    background: radial-gradient(circle at 6% 2%, #f9f6ef 0, #f2efe8 54%, #ebe6dd 100%);
+}
+
+.page-bg {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 92% 12%, rgba(13, 92, 99, 0.18), transparent 30%),
+        radial-gradient(circle at 20% 72%, rgba(217, 119, 6, 0.13), transparent 35%);
+}
+
+.app-shell {
+    position: relative;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 28px 22px 36px;
+}
+
+.hero h1 {
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    margin: 6px 0 8px;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    letter-spacing: -0.02em;
+}
+
+.hero p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    color: var(--primary);
+    font-size: 0.76rem;
+}
+
+.layout-grid {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 16px;
+}
+
+.panel {
+    background: color-mix(in srgb, var(--surface) 93%, #fff 7%);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: var(--shadow);
+    animation: rise 420ms ease-out both;
+}
+
+.panel:nth-child(2) {
+    animation-delay: 90ms;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-family: "Space Grotesk", "Segoe UI", sans-serif;
+    font-size: 1.24rem;
+}
+
+.badge {
+    background: #dceff0;
+    color: #0b4950;
+    border: 1px solid #b5d5d8;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.field-group.small {
+    width: 130px;
+}
+
+.field-group.inline {
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+label {
+    font-size: 0.82rem;
+    color: #495465;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    border: 1px solid #c8bba6;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--ink);
+    background: #fff;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0a6268;
+    box-shadow: 0 0 0 3px rgba(13, 92, 99, 0.17);
+}
+
+.item-entry {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.item-entry .field-group:first-child {
+    flex: 1;
+    min-width: 220px;
+}
+
+.controls-row,
+.history-filters,
+.action-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.check-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.check-wrap input {
+    width: auto;
+}
+
+.table-wrap {
+    margin: 8px 0 12px;
+    border: 1px solid #d7cfbe;
+    border-radius: 12px;
+    overflow: auto;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 580px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #eee6d9;
+    text-align: left;
+    padding: 10px 9px;
+    font-size: 0.9rem;
+}
+
+th {
+    background: #f8f4ec;
+    color: #425166;
+    font-size: 0.79rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td:last-child,
+th:last-child {
+    text-align: center;
+}
+
+td input {
+    padding: 6px 8px;
+    font-size: 0.88rem;
+}
+
+.summary-card {
+    border: 1px solid #d8cab2;
+    background: linear-gradient(145deg, #fffdf8, #f8f2e6);
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin: 8px 0 10px;
+}
+
+.summary-card p,
+.summary-card h3 {
+    margin: 6px 0;
+}
+
+.summary-card h3 {
+    color: #0f3a57;
+    font-size: 1.1rem;
+}
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: transform 120ms ease, filter 120ms ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(0.98);
+}
+
+.btn.primary {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn.accent {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn.ghost {
+    background: #fff;
+    color: #293649;
+    border-color: #c8bba6;
+}
+
+.btn.danger {
+    background: #fff5f5;
+    color: var(--danger);
+    border-color: #fecaca;
+}
+
+.status {
+    min-height: 22px;
+    margin: 8px 0 0;
+    color: var(--success);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.status.error {
+    color: var(--danger);
+}
+
+.history-table table {
+    min-width: 100%;
+}
+
+.history-actions {
+    display: inline-flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.history-actions .btn {
+    padding: 6px 10px;
+    font-size: 0.76rem;
+}
+
+.empty-row {
+    text-align: center;
+    color: #788496;
+    font-style: italic;
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1060px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .app-shell {
+        padding: 16px 12px 22px;
+    }
+
+    .panel {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .item-entry .field-group,
+    .field-group.small {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
